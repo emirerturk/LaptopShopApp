@@ -1,0 +1,33 @@
+@model Product
+
+<div class="card mb-3">
+    <div class="card-body">
+        <div class="row no-gutters">
+            <div class="col-md-3">
+                <img src="~/img/laptop.png" class="card-img">
+            </div>
+            <div>
+
+            </div>
+            <div class="col-md-9">
+                <h5 class="card-title">@Model.Baslik</h5>
+                <hr>
+
+                <p class="card-text1">Fiyat : @Model.Fiyat TL</p>
+                <p class="card-text2">Marka : @Model.Marka</p>
+                <p class="card-text2">Model : @Model.Model</p>
+                <p class="card-text3">Ekran Boyutu : @Model.EkranBoyutu</p>
+                <p class="card-text4">Ekran Kartı : @Model.EkranKarti</p>
+                <p class="card-text5">İşlemci Modeli : @Model.IslemciModeli</p>
+                <p class="card-text6">İşletim Sistemi : @Model.IsletimSistemi</p>
+                <p class="card-text7">DiskKapasitesi : @Model.DiskKapasitesi</p>
+                <p class="card-text10">BellekKapasitesi : @Model.BellekKapasitesi</p>
+                <p class="card-text11">Disk Türü : @Model.DiskTuru</p>
+                <p class="card-text12">Puan : @Model.Puan</p>
+                <p class="hidden">Id: @Model.laptopid</p>
+
+
+            </div>
+        </div>
+    </div>
+</div>

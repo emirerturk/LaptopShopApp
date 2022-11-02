@@ -1,0 +1,53 @@
+@model ProductViewModel
+@{
+
+    var products = Model.Products;
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <h1>Tüm Ürünler</h1>
+        <hr>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td style="width: 30px;">Id</td>
+                    <td style="width: 100px;">Resim</td>
+                    <td>Baslik</td>
+                    <td style="width: 20px;">Fiyat</td>
+                    <td style="width: 150px;"></td>
+                </tr>
+            </thead>
+            <tbody>
+                @if (products.Count > 0)
+                {
+                    @foreach (var item in products)
+                    {
+                        <tr>
+                            <td>@item.laptopid</td>
+                            <td><img src="~/img/laptop.png" width="80"></td>
+                            <td>@item.Baslik</td>
+                            <td>@item.Fiyat</td>
+                            <td>
+                                <a href="/admin/edit/@item.laptopid" class="btn btn-primary btn-sm mr-2">Güncelle</a>
+                                <form action="/admin/deleteproduct" method="POST" style="display:inline;">
+                                    <input type="hidden" name="laptopid" value="@item.laptopid">
+                                    <button type="submit" class="btn btn-danger btn-sm">Sil</button>
+                                </form>
+
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <div class="alert alert-warning">
+                        <h3>No Products</h3>
+                    </div>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
